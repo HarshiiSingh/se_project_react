@@ -1,7 +1,9 @@
+import './Footer.css';
 function Footer() {
     return (
         <footer className="footer">
-            <p>Hello!</p>
+            <p className="footer__name">Developed by Harshit Singh</p>
+            <p className="footer__year">2024</p>
         </footer>
     );
 }

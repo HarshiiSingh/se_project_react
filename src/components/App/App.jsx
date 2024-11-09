@@ -10,12 +10,13 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    
+    <div className="page">
       <div className="page__content">
         <Header />
         <Main />
         <Footer />
       </div>
+    </div>
     
   )
 }
