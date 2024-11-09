@@ -7,15 +7,16 @@ import ModalWithForm from '../ModalWithForm/ModalWithForm.jsx'
 import ItemModal from '../ItemModal/ItemModal.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [weatherData, setWeatherData] = useState({ type: "hot"});
 
   return (
     <div className="page">
       <div className="page__content">
         <Header />
-        <Main />
+        <Main weatherData={weatherData} />
         <Footer />
       </div>
+      <ModalWithForm />
     </div>
     
   )

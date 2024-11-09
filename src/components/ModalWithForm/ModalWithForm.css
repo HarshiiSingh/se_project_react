@@ -1,0 +1,123 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__content {
+    background-color: white;
+    position: relative;
+    padding: 28px 36px;
+    max-width: 496px;
+    box-sizing: border-box;
+    width: 100%;;
+    border-radius: 20px;
+}
+
+.modal__close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    border: none;
+    background: none;
+    
+}
+
+.modal__title {
+    margin: 0 0 24px 0;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.modal__label {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 1);
+}
+
+
+.modal__form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.modal__close-img {
+    width: 16px;
+    height: 16px;
+}
+
+.modal__input {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    width: 100%;
+    margin: 8px 0 24px 0;
+    padding: 0 0 4px 0;
+}
+
+
+.modal__radio-buttons {
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    color: #00000080;
+}
+
+.modal__legend {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 1);
+    margin: 0 0 12px 0;
+}
+.modal__label_type_radio {
+    margin: 0 0 8px 0;
+}
+
+.modal__label_type_radio:last-child {
+    margin: 0;
+}
+
+.modal__radio-input {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0 11px 0 0;
+}
+
+input[type="radio"]:checked + label {
+    color: black;
+  }
+
+.modal__radio_input:checked {
+    accent-color: #000000;
+  }
+
+.modal__submit {
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 124px;
+    height: 36px;
+    border: none;
+    border-radius: 5px;
+    margin: 32px 0 0 0;
+    /* need to add padding here but not working? */
+  }
