@@ -7,10 +7,11 @@ function Main({ weatherData, handleCardClick }) {
     return (
         <main>
             <WeatherCard weatherData={weatherData}/>
+            
             <section className="cards">
                 <p className="cards__text">Today is {weatherData.temp.F} &deg; F / You may want to wear:</p>
             </section>
-            {/* add cards */}
+
             <ul className="cards__list">
                 {defaultClothingItems
                 .filter((item) => {

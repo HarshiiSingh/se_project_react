@@ -9,13 +9,10 @@
     align-items: center;
     justify-content: center;
     visibility: hidden;
-    /* transition: visibility 0s linear 0.5s, opacity 0.5s linear; */
 }
 
 .modal_opened {
     visibility: visible;
-    /* opacity: 1;
-    transition-delay: 0s; */
 }
 
 .modal__content {
@@ -34,6 +31,7 @@
     right: 28px;
     border: none;
     background: none;
+    cursor: pointer;
     
 }
 
@@ -48,14 +46,12 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    color: rgba(0, 0, 0, 1);
 }
 
 
 .modal__form {
     display: flex;
     flex-direction: column;
-    
 }
 
 .modal__close-img {
@@ -68,7 +64,6 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    color: rgba(0, 0, 0, 0.5);
     border: none;
     border-bottom: 1px solid #000;
     outline: none;
@@ -77,13 +72,15 @@
     padding: 0 0 4px 0;
 }
 
+.modal__input:focus-visible {
+    color: black;
+}
 
 .modal__radio-buttons {
     border: none;
     padding: 0;
     display: flex;
     flex-direction: column;
-    color: #00000080;
 }
 
 .modal__legend {
@@ -93,8 +90,11 @@
     color: rgba(0, 0, 0, 1);
     margin: 0 0 12px 0;
 }
+
 .modal__label_type_radio {
     margin: 0 0 8px 0;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
 .modal__label_type_radio:last-child {
@@ -106,26 +106,30 @@
     font-size: 16px;
     line-height: 20px;
     margin: 0 11px 0 0;
+    cursor: pointer;
 }
 
-input[type="radio"]:checked + label {
+input[type="radio"]:checked + span {
     color: black;
-  }
-
-.modal__radio_input:checked {
+}
+  
+.modal__radio-input:checked {
     accent-color: #000000;
-  }
+}
 
 .modal__submit {
-    color: white;
-    font-weight: 700;
-    font-size: 16px;
+    margin-top: 32px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #000;
+    color: #fff;
     line-height: 20px;
-    background-color: rgba(0, 0, 0, 0.3);
     width: 124px;
     height: 36px;
-    border: none;
-    border-radius: 5px;
-    margin: 32px 0 0 0;
-    /* need to add padding here but not working? */
-  }
+    cursor: pointer;
+}
+
+.modal__submit:hover {
+    background-color: rgb(0, 0, 0, 0.6);
+}
