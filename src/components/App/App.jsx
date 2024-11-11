@@ -48,7 +48,7 @@ function App() {
         <Main weatherData={weatherData} handleCardClick={handleCardClick}/>
         <Footer />
       </div>
-      <ModalWithForm closeActiveModal={closeActiveModal} buttonText="Add garment" title="New garment" activeModal={activeModal}>
+      <ModalWithForm closeActiveModal={closeActiveModal} buttonText="Add garment" title="New garment" activeModal={activeModal} isOpen={activeModal === "add-garment"}>
                     <label htmlFor="name" className="modal__label">Name 
                         <input type="text" className="modal__input" id="name" placeholder="Name"/></label>
                     <label htmlFor="imageURL" className="modal__label">Image
