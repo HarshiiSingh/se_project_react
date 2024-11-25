@@ -8,6 +8,7 @@
     flex-direction: column;
     padding: 0;
     border-radius: 20px;
+    background: white;
 }
 
 .modal__img {
@@ -33,11 +34,32 @@
 }
 
 .modal__close_type_preview {
+    position: absolute;
     top: 24px;
     right: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
 .modal__close-img_type_preview {
     width: 20px;
     height: 20px;
+}
+
+.modal__delete-btn {
+    display: flex;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255, 77, 0, 1);
+    margin-right: 32px;
+    padding: 0;
+  }
+
+.modal__text {
+    display: flex;
+    justify-content: space-between;
 }

@@ -1,15 +1,20 @@
 .switch {
     display: flex;
     position: relative;
-    
+    margin: 11px 20px 6px auto;
 }
 
 .switch__box {
     border-radius: 25px;
-    border: 2px solid black;
+    border: 2px solid rgba(126, 126, 126, 1);
     width: 56px;
     height: 28px;
     appearance: none;
+    cursor: pointer;
+}
+
+.switch__box:hover {
+    border: 2px solid black;
 }
 
 .switch__slider { 
@@ -23,10 +28,8 @@
     position: absolute;
 }
 
-
-
 .switch__slider-F {
-    left: 1px;
+    left: 0px;
 }
 
 .switch__slider-C {
@@ -39,16 +42,21 @@
     font-weight: 700;
     line-height: 17.36px'
 }
+
 .switch__temp-F {
     position: absolute;
-    top: -10px;
+    top: 6px;
     left: 9px;
+    margin: 0;
+    cursor: pointer;
+    
 }
 
 .switch__temp-C {
     position: absolute;
-    top: -10px;
-    left: 37px;
+    top: 6px;
+    left: 38px;
+    margin: 0;
+    cursor: pointer;
+    
 }   
-
-/* add the animation */
