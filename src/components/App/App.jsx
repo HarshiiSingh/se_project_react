@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Routes, Route } from "react-router-dom";
 import './App.css'
 import Header from '../Header/Header.jsx'
 import Main from '../Main/Main.jsx'
@@ -7,17 +8,23 @@ import ModalWithForm from '../ModalWithForm/ModalWithForm.jsx'
 import ItemModal from '../ItemModal/ItemModal.jsx'
 import { getWeather, filterWeatherData } from '../../utils/weatherApi.js'
 import { coordinates, APIkey } from '../../utils/constants.js'
+import CurrentTemperatureUnitContext from '../../contexts/CurrentTemperatureUnitContext.js'
+import Profile from '../Profile/Profile.jsx';
+
 
 function App() {
   
   const [weatherData, setWeatherData] = useState({ 
     type: "", 
-    temp: {F: 999},
+    temp: {
+      F: 999
+    },
     city: "",
   });
 
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -40,12 +47,25 @@ function App() {
     })
     .catch(console.error);
   }, []);
-
+  
+  const handleToggleSwitchChange = () => {
+    if (currentTemperatureUnit === 'C') setCurrentTemperatureUnit('F');
+    if (currentTemperatureUnit === 'F') setCurrentTemperatureUnit('C'); 
+  }; 
+console.log(currentTemperatureUnit);
   return (
     <div className="page">
+      <CurrentTemperatureUnitContext.Provider value={{currentTemperatureUnit, handleToggleSwitchChange}}>
       <div className="page__content">
         <Header handleAddClick={handleAddClick} weatherData={weatherData}/>
-        <Main weatherData={weatherData} handleCardClick={handleCardClick}/>
+         
+                    <Main weatherData={weatherData} handleCardClick={handleCardClick}/>
+            
+  
+                {/* <Profile /> */}
+            
+            
+
         <Footer />
       </div>
       <ModalWithForm closeActiveModal={closeActiveModal} buttonText="Add garment" title="New garment" isOpen={activeModal === "add-garment"}>
@@ -67,6 +87,7 @@ function App() {
                     </fieldset>
       </ModalWithForm>
       <ItemModal activeModal={activeModal} card={selectedCard} closeActiveModal={closeActiveModal} />
+      </CurrentTemperatureUnitContext.Provider>
     </div>
     
   )

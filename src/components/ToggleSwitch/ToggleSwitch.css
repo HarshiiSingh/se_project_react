@@ -1,0 +1,54 @@
+.switch {
+    display: flex;
+    position: relative;
+    
+}
+
+.switch__box {
+    border-radius: 25px;
+    border: 2px solid black;
+    width: 56px;
+    height: 28px;
+    appearance: none;
+}
+
+.switch__slider { 
+    border-radius: 20px;
+    width: 28px;
+    height: 28px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+}
+
+
+
+.switch__slider-F {
+    left: 1px;
+}
+
+.switch__slider-C {
+    left: 29px;
+}
+
+.switch__active {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17.36px'
+}
+.switch__temp-F {
+    position: absolute;
+    top: -10px;
+    left: 9px;
+}
+
+.switch__temp-C {
+    position: absolute;
+    top: -10px;
+    left: 37px;
+}   
+
+/* add the animation */
