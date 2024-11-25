@@ -1,13 +1,7 @@
+import { checkResponse } from "./api.js";
 export const getWeather = ({latitude, longitude}, APIkey) => {
     return fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`)
     .then(checkResponse)
-}
-
-function checkResponse(res) {
-    if (res.ok) {
-        return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
 }
 
 export const filterWeatherData = (data) => {
@@ -36,6 +30,3 @@ const getWeatherType = (temperature) => {
       return "cold";
     }
   };
-
-//   weather.temperature.F = data.main.temp;
-// weather.temperature.C = Math.round((data.main.temp - 32) * 5/9);

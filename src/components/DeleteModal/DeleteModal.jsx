@@ -19,13 +19,13 @@ function DeleteModal({ activeModal, closeActiveModal, onDelete }) {
         </button>
         <form className="modal__form">
           <button
-            className="delete-modal__submit"
-            type="submit"
+            className="delete-modal__btn"
+            type="button"
             onClick={onDelete}
           >
             Yes, delete item
           </button>
-          <button className="cancel__submit" type="button" onClick={closeActiveModal} >
+          <button className="cancel__btn" type="button" onClick={closeActiveModal} >
             Cancel
           </button>
         </form>

@@ -39,4 +39,4 @@ const removeItem = (_id) => {
   });
 };
 
-export { getItems, addItem, removeItem };
+export { getItems, addItem, removeItem, checkResponse};
