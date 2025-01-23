@@ -1,0 +1,25 @@
+.modal__label:last-of-type {
+  margin: 0 0 6px 0;
+  padding: 0;
+}
+
+.modal__submit {
+  width: 86px;
+  height: 36px;
+  margin: 0;
+}
+
+.register-modal__button {
+  position: absolute;
+  bottom: 36px;
+  left: 134px;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  font-family: "Cabinet Grotesk", sans-serif;
+  opacity: 50%;
+}

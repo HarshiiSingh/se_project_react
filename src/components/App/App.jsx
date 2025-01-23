@@ -9,6 +9,7 @@ import ItemModal from "../ItemModal/ItemModal.jsx";
 import Profile from "../Profile/Profile.jsx";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 import DeleteModal from "../DeleteModal/DeleteModal.jsx";
+import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
 import { coordinates, APIkey } from "../../utils/constants.js";
 import { getItems, addItem, removeItem } from "../../utils/api.js";
@@ -38,6 +39,10 @@ function App() {
 
   const handleDeleteClick = () => {
     setActiveModal("delete");
+  };
+
+  const handleSignUpClick = () => {
+    setActiveModal("sign-up");
   };
 
   const closeActiveModal = () => {
@@ -93,7 +98,11 @@ function App() {
         value={{ currentTemperatureUnit, handleToggleSwitchChange }}
       >
         <div className="page__content">
-          <Header handleAddClick={handleAddClick} weatherData={weatherData} />
+          <Header
+            handleAddClick={handleAddClick}
+            weatherData={weatherData}
+            handleSignUpClick={handleSignUpClick}
+          />
           <Routes>
             <Route
               path="/"
@@ -134,6 +143,11 @@ function App() {
           activeModal={activeModal}
           closeActiveModal={closeActiveModal}
           onDelete={deleteItem}
+        />
+        <RegisterModal
+          closeActiveModal={closeActiveModal}
+          activeModal={activeModal}
+          handleSignUpClick={handleSignUpClick}
         />
       </CurrentTemperatureUnitContext.Provider>
     </div>
