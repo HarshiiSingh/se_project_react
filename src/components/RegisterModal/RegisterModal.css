@@ -3,12 +3,6 @@
   padding: 0;
 }
 
-.modal__submit {
-  width: 86px;
-  height: 36px;
-  margin: 0;
-}
-
 .register-modal__button {
   position: absolute;
   bottom: 36px;

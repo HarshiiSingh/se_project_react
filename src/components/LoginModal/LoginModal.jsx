@@ -37,7 +37,7 @@ function LoginModal({
       onSubmit={handleSubmit}
     >
       <label className="modal__label">
-        Email*
+        Email*{" "}
         <input
           type="email"
           className="modal__input"
@@ -49,7 +49,7 @@ function LoginModal({
         />
       </label>
       <label className="modal__label">
-        Password*
+        Password*{" "}
         <input
           type="password"
           name="password"

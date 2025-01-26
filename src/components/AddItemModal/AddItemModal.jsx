@@ -1,5 +1,6 @@
 import React from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import "./AddItemModal.css";
 
 function AddItemModal({ closeActiveModal, activeModal, onSubmit }) {
   const [name, setName] = React.useState("");
@@ -37,6 +38,7 @@ function AddItemModal({ closeActiveModal, activeModal, onSubmit }) {
       title="New garment"
       isOpen={activeModal === "add-garment"}
       onSubmit={handleSubmit}
+      buttonClass={"modal__submit-add-item"}
     >
       <label htmlFor="name" className="modal__label">
         Name

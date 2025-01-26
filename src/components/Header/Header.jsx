@@ -1,5 +1,4 @@
 import logo from "../../assets/header-logo.png";
-import avatar from "../../assets/header-avatar.png";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import "./Header.css";
 import { Link } from "react-router-dom";
@@ -63,14 +62,15 @@ function Header({
             <Link to="/profile" className="header__link">
               <div className="header__container-user">
                 <p className="header__username">{currentUser.name}</p>
-                {currentUser.avatar ? (<img
-                  src={currentUser.avatar}
-                  alt={currentUser.name}
-                  className="header__avatar"
-                />) : (
+                {currentUser.avatar ? (
+                  <img
+                    src={currentUser.avatar}
+                    alt={currentUser.name}
+                    className="header__avatar"
+                  />
+                ) : (
                   generatePlaceholder(currentUser.name)
                 )}
-                
               </div>
             </Link>
           </>

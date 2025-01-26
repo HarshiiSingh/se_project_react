@@ -8,6 +8,10 @@ function ItemModal({ activeModal, card, closeActiveModal, handleDelete }) {
   // Checking if the current user is the owner of the current clothing item
   const isOwn = card.owner === currentUser?._id;
 
+  // Creating a variable which you'll then set in `className` for the delete button
+  const itemDeleteButtonClassName = `modal__delete-button ${
+    isOwn ? "" : "modal__delete-button_hidden"
+  }`;
   return (
     <div className={`modal ${activeModal === "preview" ? "modal_opened" : ""}`}>
       <div className="modal__content_type_image">

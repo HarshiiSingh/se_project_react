@@ -1,14 +1,14 @@
-.login-modal__button {
-    cursor: pointer;
-    position: absolute;
-    bottom: 37px;
-    left: 129px;
-    padding: 0;
-    border: none;
-    background-color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.25;
-    font-family: "Cabinet Grotesk", sans-serif;
-    opacity: 50%;
+.signup-modal__button {
+  position: absolute;
+  bottom: 36px;
+  left: 134px;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  font-family: "Cabinet Grotesk", sans-serif;
+  opacity: 50%;
 }

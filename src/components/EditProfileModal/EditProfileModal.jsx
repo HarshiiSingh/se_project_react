@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
+import "./EditProfileModal.css";
 
 function EditProfileModal({
   closeActiveModal,
@@ -16,17 +17,16 @@ function EditProfileModal({
 
   const handleChange = (evt) => {
     const { name, value } = evt.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value}));
-
-}
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (e.target.checkValidity()) {
-        handleEditProfile(formData);
+      handleEditProfile(formData);
     }
-};
+  };
   useEffect(() => {
     if (activeModal && currentUser) {
       console.log("Current User:", currentUser);
@@ -44,6 +44,7 @@ function EditProfileModal({
       title="Change profile data"
       buttonText="Save changes"
       onSubmit={handleSubmit}
+      buttonClass={"modal__submit-edit-profile"}
     >
       <label className="modal__label">
         Name*{" "}

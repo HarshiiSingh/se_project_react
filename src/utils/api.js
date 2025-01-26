@@ -55,35 +55,35 @@ const editUserProfile = (name, avatar) => {
   }).then(checkResponse);
 };
 
-const addCardLike = (id, token) => {
-  console.log("Card ID:", id);
-  return fetch(`${baseUrl}/items/${id}/likes`, {
+const addCardLike = (_id, token) => {
+  return fetch(`${baseUrl}/items/${_id}/likes`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
   })
-    .then(checkResponse);
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
 };
 
-const removeCardLike = (id, token) => {
-  return fetch(`${baseUrl}/items/${id}/likes`, {
+const removeCardLike = (_id, token) => {
+  return fetch(`${baseUrl}/items/${_id}/likes`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
   })
-    .then(checkResponse);
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
 };
-
 export {
   getItems,
   addItem,
   removeItem,
   editUserProfile,
-  addCardLike,
   removeCardLike,
+  addCardLike,
   checkResponse,
 };

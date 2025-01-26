@@ -17,9 +17,9 @@ import {
   getItems,
   addItem,
   removeItem,
-  editUserProfile,
   addCardLike,
   removeCardLike,
+  editUserProfile,
 } from "../../utils/api.js";
 import * as auth from "../../utils/auth.js";
 import { setToken, getToken, removeToken } from "../../utils/token";
@@ -94,10 +94,10 @@ function App() {
 
   useEffect(() => {
     const jwt = getToken();
-    console.log("current jwt:", jwt);
+    console.log("JWT from storage:", jwt);
 
     if (!jwt) {
-      console.log("no jwt saved");
+      console.log("No JWT found. Logging out.");
       setCurrentUser(null);
       setIsLoggedIn(false);
       return;
@@ -177,24 +177,31 @@ function App() {
 
   const handleCardLike = ({ _id, isLiked }) => {
     const token = localStorage.getItem("jwt");
-
+    // Check if this card is not currently liked
     !isLiked
-      ? addCardLike(_id, token)
+      ? // if so, send a request to add the user's id to the card's likes array
+        addCardLike(_id, token)
           .then((updatedCard) => {
             setClothingItems((cards) =>
-              cards.map((item) => (item._id === _id ? updatedCard : item))
+              cards.map((item) => (item._id === _id ? updatedCard.data : item))
             );
           })
           .catch((err) => console.log(err))
-      : removeCardLike(_id, token)
+      : // if not, send a request to remove the user's id from the card's likes array
+        removeCardLike(_id, token)
           .then((updatedCard) => {
             setClothingItems((cards) =>
-              cards.map((item) => (item._id === _id ? updatedCard : item))
+              cards.map((item) => (item._id === _id ? updatedCard.data : item))
             );
           })
           .catch((err) => console.log(err));
   };
-
+  const handleLogOut = () => {
+    removeToken();
+    setIsLoggedIn(false);
+    setCurrentUser(null);
+    navigate("/");
+  };
   return (
     <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>
       <div className="page">
@@ -230,6 +237,7 @@ function App() {
                       handleAddClick={handleAddClick}
                       handleEditProfileClick={handleEditProfileClick}
                       onCardLike={handleCardLike}
+                      handleLogOut={handleLogOut}
                     />
                   </ProtectedRoute>
                 }

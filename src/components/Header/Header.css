@@ -53,14 +53,27 @@
 }
 
 .header__sign-up-button {
-  margin: 0 0 0 20px;
-  padding: 0;
-  border: none;
-  cursor: pointer;
+  margin: 8px 20px 0 auto;
+  font-weight: 700;
   font-size: 20px;
   line-height: 24px;
+  color: #000000;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+.header__sign-in-button {
+  margin: 8px 20px 0 auto;
   font-weight: 700;
-  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
 }
 
 .header__avatar {

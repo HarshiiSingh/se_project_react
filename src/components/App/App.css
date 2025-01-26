@@ -1,10 +1,10 @@
 .page {
-    background-color: #F3F3F3;
-    font-family: "CabinetGrotesk-Bold";
+  background-color: #f3f3f3;
+  font-family: "CabinetGrotesk-Bold";
 }
 
 .page__content {
-    max-width: 1360px;
-    margin: 0 auto;
-    padding: 0 40px;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
 }

@@ -37,7 +37,7 @@ function RegisterModal({
       onSubmit={handleSubmit}
     >
       <label className="modal__label">
-        Email*
+        Email*{" "}
         <input
           type="email"
           className="modal__input"
@@ -49,7 +49,7 @@ function RegisterModal({
         />
       </label>
       <label className="modal__label">
-        Password*
+        Password*{" "}
         <input
           type="password"
           name="password"
@@ -62,7 +62,7 @@ function RegisterModal({
         />
       </label>
       <label className="modal__label">
-        Name*
+        Name*{" "}
         <input
           type="text"
           className="modal__input"
@@ -74,7 +74,7 @@ function RegisterModal({
         />
       </label>
       <label className="modal__label">
-        Avatar URL*
+        Avatar URL*{" "}
         <input
           type="url"
           className="modal__input"
