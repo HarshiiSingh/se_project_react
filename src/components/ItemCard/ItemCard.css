@@ -32,3 +32,23 @@
     border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, 0.3)
 }
+
+.card__like-btn {
+    background-image: url("../../assets/default-like.svg");
+    background-size: cover;
+    background-repeat: no-repeat;  
+    background-color: transparent;
+    width: 18px;
+    height: 15px;
+    border: none;
+    cursor: pointer;
+    top: 15px;
+    margin-left: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card__like-btn.liked {
+    background-image: url("../../assets/active-like.svg");
+  }

@@ -1,39 +1,39 @@
-import { useState, useEffect } from "react";
+import "./LoginModal.css";
+import "../ModalWithForm/ModalWithForm";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import "./RegisterModal.css";
-
-function RegisterModal({
+import { useState } from "react";
+function LoginModal({
   closeActiveModal,
   activeModal,
-  handleSignInClick,
-  isOpen,
-  handleRegistration,
+  handleSignUpClick,
+  handleLogin,
 }) {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    name: "",
-    avatar: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (e.target.checkValidity()) {
-      handleRegistration(formData);
+      handleLogin(formData);
     }
   };
 
   return (
     <ModalWithForm
       closeActiveModal={closeActiveModal}
-      isOpen={activeModal === "sign-up"}
-      title="Sign Up"
-      buttonText="Sign Up"
+      isOpen={activeModal === "sign-in"}
+      title="Log In"
+      buttonText="Log In"
       onSubmit={handleSubmit}
     >
       <label className="modal__label">
@@ -61,39 +61,15 @@ function RegisterModal({
           onChange={handleChange}
         />
       </label>
-      <label className="modal__label">
-        Name*
-        <input
-          type="text"
-          className="modal__input"
-          name="name"
-          placeholder="Name"
-          required
-          value={formData.name}
-          onChange={handleChange}
-        />
-      </label>
-      <label className="modal__label">
-        Avatar URL*
-        <input
-          type="url"
-          className="modal__input"
-          name="avatar"
-          placeholder="Avatar URL"
-          required
-          value={formData.avatar}
-          onChange={handleChange}
-        />
-      </label>
       <button
         type="button"
-        className="register-modal__button"
-        onClick={handleSignInClick}
+        className="signup-modal__button"
+        onClick={handleSignUpClick}
       >
-        or Log In
+        or Sign Up
       </button>
     </ModalWithForm>
   );
 }
 
-export default RegisterModal;
+export default LoginModal;

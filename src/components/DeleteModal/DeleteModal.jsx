@@ -10,7 +10,11 @@ function DeleteModal({ activeModal, closeActiveModal, onDelete }) {
           This action is irreversible.
           <br />
         </h2>
-        <button onClick={closeActiveModal} className="modal__close" type="button">
+        <button
+          onClick={closeActiveModal}
+          className="modal__close"
+          type="button"
+        >
           <img
             className="delete-modal__close-icon"
             src={close}
@@ -25,7 +29,11 @@ function DeleteModal({ activeModal, closeActiveModal, onDelete }) {
           >
             Yes, delete item
           </button>
-          <button className="cancel__btn" type="button" onClick={closeActiveModal} >
+          <button
+            className="cancel__btn"
+            type="button"
+            onClick={closeActiveModal}
+          >
             Cancel
           </button>
         </form>
