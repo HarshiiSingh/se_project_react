@@ -17,3 +17,8 @@
   font-family: "Cabinet Grotesk", sans-serif;
   opacity: 50%;
 }
+
+.register-btn {
+  width: 86px;
+  margin: 8px 0 0 0;
+}

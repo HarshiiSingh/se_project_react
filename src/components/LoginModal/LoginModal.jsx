@@ -35,6 +35,7 @@ function LoginModal({
       title="Log In"
       buttonText="Log In"
       onSubmit={handleSubmit}
+      buttonClass={"login-btn"}
     >
       <label className="modal__label">
         Email*{" "}

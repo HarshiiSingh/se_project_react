@@ -13,24 +13,15 @@ function ItemCard({ item, onCardClick, onCardLike }) {
   };
 
   const handleLike = () => {
-    const newLikes = [...item.likes];
-    if (isLiked) {
-      const index = newLikes.indexOf(currentUser._id);
-      if (index !== -1) newLikes.splice(index, 1);
-    } else {
-      newLikes.push(currentUser._id);
-    }
-
-    onCardLike({ _id: item._id, isLiked: isLiked });
-    console.log("onCardLike in ItemCard:", onCardLike);
+    onCardLike({ _id: item._id, isLiked });
   };
+
   return (
     <div className="card" key={item._id}>
       <div className="card__content">
         <h2 className="card__title">{item.name}</h2>
         {currentUser && (
           <button
-            id={`like-btn-${item._id}`}
             onClick={handleLike}
             className={itemLikeButtonClassName}
           ></button>

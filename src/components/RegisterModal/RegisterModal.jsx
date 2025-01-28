@@ -35,6 +35,7 @@ function RegisterModal({
       title="Sign Up"
       buttonText="Sign Up"
       onSubmit={handleSubmit}
+      buttonClass={"register-btn"}
     >
       <label className="modal__label">
         Email*{" "}
