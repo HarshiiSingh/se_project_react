@@ -12,7 +12,8 @@
 }
 
 .modal__img {
-  object-fit: contain;
+  object-fit: cover;
+  height: 498px;
   margin-bottom: 20px;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;

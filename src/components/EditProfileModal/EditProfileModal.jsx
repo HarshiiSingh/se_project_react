@@ -32,7 +32,7 @@ function EditProfileModal({
     if (activeModal && currentUser) {
       console.log("Current User:", currentUser);
       setFormData({
-        username: currentUser?.name,
+        name: currentUser?.name,
         avatar: currentUser?.avatar,
       });
     }
