@@ -14,6 +14,7 @@ function ClothesSection({
     currentUser && currentUser._id
       ? clothingItems.filter((item) => item.owner === currentUser._id)
       : [];
+
   return (
     <div className="clothes-section">
       <div className="clothes-section__controls">

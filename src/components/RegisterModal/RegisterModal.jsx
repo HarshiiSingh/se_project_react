@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 
@@ -6,7 +6,6 @@ function RegisterModal({
   closeActiveModal,
   activeModal,
   handleSignInClick,
-  isOpen,
   handleRegistration,
 }) {
   const [formData, setFormData] = useState({
@@ -38,7 +37,7 @@ function RegisterModal({
       buttonClass={"register-btn"}
     >
       <label className="modal__label">
-        Email*{" "}
+        Email*
         <input
           type="email"
           className="modal__input"
@@ -50,7 +49,7 @@ function RegisterModal({
         />
       </label>
       <label className="modal__label">
-        Password*{" "}
+        Password*
         <input
           type="password"
           name="password"
@@ -63,7 +62,7 @@ function RegisterModal({
         />
       </label>
       <label className="modal__label">
-        Name*{" "}
+        Name*
         <input
           type="text"
           className="modal__input"
@@ -75,7 +74,7 @@ function RegisterModal({
         />
       </label>
       <label className="modal__label">
-        Avatar URL*{" "}
+        Avatar URL*
         <input
           type="url"
           className="modal__input"
@@ -88,7 +87,7 @@ function RegisterModal({
       </label>
       <button
         type="button"
-        className="register-modal__button"
+        className="login-modal__button"
         onClick={handleSignInClick}
       >
         or Log In

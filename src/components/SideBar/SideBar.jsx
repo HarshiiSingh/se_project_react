@@ -16,16 +16,16 @@ function SideBar({ handleEditProfileClick, handleLogOut }) {
         />
         <p className="sidebar__username">{currentUser.name}</p>
       </div>
-      <div className="sideBar__editProfile">
+      <div className="sidebar__edit-user">
         <button
-          className="sideBar__changeUserData"
+          className="sidebar__change-name"
           onClick={handleEditProfileClick}
           type="button"
         >
           Change Profile Data
         </button>
         <button
-          className="sideBar__logout"
+          className="sidebar__logout"
           onClick={handleLogOut}
           type="button"
         >

@@ -1,7 +1,8 @@
+import { useState } from "react";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./LoginModal.css";
 import "../ModalWithForm/ModalWithForm";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useState } from "react";
+
 function LoginModal({
   closeActiveModal,
   activeModal,
@@ -38,7 +39,7 @@ function LoginModal({
       buttonClass={"login-btn"}
     >
       <label className="modal__label">
-        Email*{" "}
+        Email
         <input
           type="email"
           className="modal__input"
@@ -50,7 +51,7 @@ function LoginModal({
         />
       </label>
       <label className="modal__label">
-        Password*{" "}
+        Password
         <input
           type="password"
           name="password"

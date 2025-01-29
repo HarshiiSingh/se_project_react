@@ -15,8 +15,7 @@ function getItems() {
   return request(`${baseUrl}/items`);
 }
 
-const addItem = ({ name, weather, imageUrl }) => {
-  const token = localStorage.getItem("jwt");
+const addItem = ({ name, weather, imageUrl }, token) => {
   return request(`${baseUrl}/items`, {
     method: "POST",
     headers: {
@@ -31,8 +30,7 @@ const addItem = ({ name, weather, imageUrl }) => {
   });
 };
 
-const removeItem = (_id) => {
-  const token = localStorage.getItem("jwt");
+const removeItem = (_id, token) => {
   console.log("Deleting item with _id:", _id);
   return request(`${baseUrl}/items/${_id}`, {
     method: "DELETE",
@@ -43,8 +41,7 @@ const removeItem = (_id) => {
   });
 };
 
-const editUserProfile = (name, avatar) => {
-  const token = localStorage.getItem("jwt");
+const editUserProfile = (name, avatar, token) => {
   return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: {
@@ -59,24 +56,20 @@ const addCardLike = (_id, token) => {
   return fetch(`${baseUrl}/items/${_id}/likes`, {
     method: "PUT",
     headers: {
-      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     },
-  })
-    .then((res) => res.json())
-    .catch((err) => console.log(err));
+  }).then(checkResponse);
 };
 
 const removeCardLike = (_id, token) => {
   return fetch(`${baseUrl}/items/${_id}/likes`, {
     method: "DELETE",
     headers: {
-      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     },
-  })
-    .then((res) => res.json())
-    .catch((err) => console.log(err));
+  }).then(checkResponse);
 };
 export {
   getItems,

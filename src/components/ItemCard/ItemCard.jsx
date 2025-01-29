@@ -3,9 +3,8 @@ import "./ItemCard.css";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 function ItemCard({ item, onCardClick, onCardLike }) {
   const { currentUser } = useContext(CurrentUserContext);
-  const isLiked = currentUser
-    ? item.likes.some((id) => id === currentUser._id)
-    : false;
+  const isLiked = currentUser ? item.likes.some((id) => id === currentUser._id) : false;
+
   const itemLikeButtonClassName = `card__like-btn ${isLiked ? "liked" : ""}`;
 
   const handleCardClick = () => {

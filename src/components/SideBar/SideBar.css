@@ -22,20 +22,22 @@
   text-wrap: nowrap;
 }
 
-.sideBar__changeUserData {
+.sidebar__change-name {
   font-weight: 700;
   font-size: 20px;
   line-height: 24.8px;
   border: none;
   margin-top: 24px;
   cursor: pointer;
+  background: transparent;
 }
 
-.sideBar__logout {
+.sidebar__logout {
   font-weight: 700;
   font-size: 20px;
   line-height: 24.8px;
   border: none;
   margin-top: 8px;
   cursor: pointer;
+  background: transparent;
 }

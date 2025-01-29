@@ -27,6 +27,7 @@ function EditProfileModal({
       handleEditProfile(formData);
     }
   };
+
   useEffect(() => {
     if (activeModal && currentUser) {
       console.log("Current User:", currentUser);
@@ -47,7 +48,7 @@ function EditProfileModal({
       buttonClass={"modal__submit-edit-profile"}
     >
       <label className="modal__label">
-        Name*{" "}
+        Name *
         <input
           type="text"
           className="modal__input"
@@ -59,12 +60,12 @@ function EditProfileModal({
         />
       </label>
       <label className="modal__label">
-        Avatar URL*{" "}
+        Avatar *
         <input
           type="url"
           className="modal__input"
           name="avatar"
-          placeholder="Avatar URL"
+          placeholder="Avatar"
           required
           value={formData.avatar}
           onChange={handleChange}

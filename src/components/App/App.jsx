@@ -43,6 +43,7 @@ function App() {
   const [clothingItems, setClothingItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
+
   const handleCardClick = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
@@ -94,7 +95,6 @@ function App() {
 
   useEffect(() => {
     const jwt = getToken();
-    console.log("JWT from storage:", jwt);
 
     if (!jwt) {
       console.log("No JWT found. Logging out.");
@@ -124,7 +124,8 @@ function App() {
   };
 
   const handleEditProfile = ({ name, avatar }) => {
-    editUserProfile(name, avatar)
+    const token = localStorage.getItem("jwt");
+    editUserProfile(name, avatar, token)
       .then((updatedUser) => {
         setCurrentUser(updatedUser);
         closeActiveModal();
@@ -133,7 +134,8 @@ function App() {
   };
 
   const deleteItem = () => {
-    removeItem(selectedCard._id)
+    const token = localStorage.getItem("jwt");
+    removeItem(selectedCard._id, token)
       .then(() => {
         setClothingItems(
           clothingItems.filter((item) => item._id !== selectedCard._id)
@@ -166,7 +168,8 @@ function App() {
   };
 
   function handleAddItemSubmit(item, resetForm) {
-    addItem(item)
+    const token = localStorage.getItem("jwt");
+    addItem(item, token)
       .then((newItem) => {
         setClothingItems((prevItems) => [newItem, ...prevItems]);
         resetForm();
@@ -177,9 +180,8 @@ function App() {
 
   const handleCardLike = ({ _id, isLiked }) => {
     const token = localStorage.getItem("jwt");
-    // Check if this card is not currently liked
     !isLiked
-      ? // if so, send a request to add the user's id to the card's likes array
+      ? 
         addCardLike(_id, token)
           .then((updatedCard) => {
             setClothingItems((cards) =>
@@ -187,7 +189,7 @@ function App() {
             );
           })
           .catch((err) => console.log(err))
-      : // if not, send a request to remove the user's id from the card's likes array
+      : 
         removeCardLike(_id, token)
           .then((updatedCard) => {
             setClothingItems((cards) =>
@@ -196,14 +198,16 @@ function App() {
           })
           .catch((err) => console.log(err));
   };
+
   const handleLogOut = () => {
     removeToken();
     setIsLoggedIn(false);
     setCurrentUser(null);
     navigate("/");
   };
+
   return (
-    <CurrentUserContext.Provider value={{ currentUser, setCurrentUser }}>
+    <CurrentUserContext.Provider value={{ currentUser}}>
       <div className="page">
         <CurrentTemperatureUnitContext.Provider
           value={{ currentTemperatureUnit, handleToggleSwitchChange }}
