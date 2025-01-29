@@ -97,7 +97,6 @@ function App() {
     const jwt = getToken();
 
     if (!jwt) {
-      console.log("No JWT found. Logging out.");
       setCurrentUser(null);
       setIsLoggedIn(false);
       return;
